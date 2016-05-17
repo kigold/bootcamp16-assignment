@@ -15,6 +15,13 @@ function NotesApplication(author){
 			console.log(result);
 		};
 	};
+	//get
+	this.get = function(note_id){
+		if (this.notes.length >= note_id){
+		result = this.notes[note_id];
+		return result
+		}
+	}
 }
 
 //testing
@@ -22,3 +29,5 @@ var n = new NotesApplication("kingsley");
 n.create("This is my 1st Note Content");
 n.create("This is my 2nd Note Content");
 n.listNotes();
+n.get(0);
+n.get(1);
