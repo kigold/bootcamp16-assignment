@@ -2,7 +2,14 @@ function NotesApplication(author){
 	this.author = author;
 	this.notes = [];
 	//methods
-	this.create = function(note_content){
-		console.log("Testing");
+	this.create = function(note){
+		this.notes.push(note);
+		console.log(this.notes);
+
 	};
 }
+
+//testing
+var n = new NotesApplication("kingsley");
+n.create("This is my 1st Note Content");
+n.create("This is my 2nd Note Content");
