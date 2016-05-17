@@ -38,12 +38,10 @@ function NotesApplication(author){
 		this.notes.pop(note_id);
 		}
 	}
+	//edit
+	this.edit = function(note_id, new_content){
+		if (this.notes.length >= note_id){
+			this.notes[note_id] = new_content;
+		}
+	}
 }
-
-//testing
-var n = new NotesApplication("kingsley");
-n.create("This is my 1st Note Content");
-n.create("This is my 2nd Note Content");
-n.listNotes();
-n.get(0);
-n.get(1);
