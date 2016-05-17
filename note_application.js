@@ -22,6 +22,16 @@ function NotesApplication(author){
 		return result
 		}
 	}
+	//search
+	this.search = function(search_text){
+		result = [];
+		for (var i=0; i<this.notes.length; i++){
+			if (this.notes[i].indexOf(search_text) > -1){
+				result.push(this.notes[i]);
+			};
+		}
+		return result;
+	}
 }
 
 //testing
