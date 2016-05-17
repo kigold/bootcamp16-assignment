@@ -32,6 +32,12 @@ function NotesApplication(author){
 		}
 		return result;
 	}
+	//delete
+	this.delete = function(note_id){
+		if (this.notes.length >= note_id){
+		this.notes.pop(note_id);
+		}
+	}
 }
 
 //testing
