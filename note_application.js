@@ -39,7 +39,7 @@ function NotesApplication(author){
 	//This function deletes the note at the index note_id of the notes list.
 	this.delete = function(note_id){
 		if (this.notes.length >= note_id){
-		this.notes.pop(note_id);
+		delete this.notes[note_id];
 		}
 	}
 
