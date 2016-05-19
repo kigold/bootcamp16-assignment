@@ -3,6 +3,7 @@ function NotesApplication(author){
 	this.author = author;
 	this.notes = [];
 
+
 	//Methods
 	//This function takes the note content as the parameter and adds it to the notes list of the object
 	this.create = function(note){
