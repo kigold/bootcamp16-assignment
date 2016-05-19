@@ -21,10 +21,14 @@ function NotesApplication(author){
 
 	//This function takes a note_id which refers to the index of the note in the notes list and returns the content of that note as a string
 	this.get = function(note_id){
-		if (this.notes.length >= note_id){
+		if (this.notes.length >= note_id && note_id > -1 ){
 		result = this.notes[note_id];
-		return result
 		}
+		else 
+			if (note_id < 0) { result = "Invalid input";}
+
+		else {result = "Specified note does not exist";}
+		return result;
 	}
 
 	//This function take a search string, search_text and returns all the notes with that text

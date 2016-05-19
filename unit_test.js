@@ -58,6 +58,29 @@ describe("Notes Application's ", function (){
 		    expect(note.listNotes()).toEqual("Note ID: 0\ntesting Note Application\n\n By Author kc");
 		});
 
+		it("get method should be called", function () {
+			spyOn(note_application,"get");
+			note_application.get(1);
+			expect(note_application.get).toHaveBeenCalled();
+		});	
+
+		it("get(1) returns This is my Second note ", function () {
+		    expect(note_application.get(1)).toEqual("This is my Second note");
+		});
+
+		it("get(10) returns Specified note does not exist ", function () {
+		    expect(note_application.get(10)).toEqual("Specified note does not exist");
+		});
+
+		it("get(-4) returns Invalid input ", function () {
+		    expect(note_application.get(-4)).toEqual("Invalid input");
+		});
+
+		it("get(ABC) returns Specified note does not exist", function () {
+		    expect(note_application.get("ABC")).toEqual("Specified note does not exist");
+		});
+
+
 
 
 });
