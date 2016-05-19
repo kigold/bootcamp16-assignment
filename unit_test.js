@@ -80,6 +80,49 @@ describe("Notes Application's ", function (){
 		    expect(note_application.get("ABC")).toEqual("Specified note does not exist");
 		});
 
+		it("search method should be called", function () {
+			spyOn(note_application,"search");
+			note_application.search("blah");
+			expect(note_application.search).toHaveBeenCalled();
+		});
+
+		it("search(Third) returns 'This is my Third note'", function () {
+		    expect(note_application.search('Third')[0]).toEqual("This is my Third note");
+		});
+
+		it("delete method should be called", function () {
+			spyOn(note_application,"delete");
+			note_application.delete("blah");
+			expect(note_application.delete).toHaveBeenCalled();
+		});
+
+		it("Number of notes should be 4", function () {
+			note_application.delete(2);
+		    expect(note_application.notes.length).toEqual(4);
+		});
+
+		it("search(Third) returns 'This is my Third note'", function () {
+		    expect(note_application.search('Third')[0]).toEqual("This is my Third note");
+		});
+
+		/*it("should not contain 'This is my Third note'", function () {
+		    expect(note_application.notes).toContain("This is my Third note");
+		});*/
+
+		it("edit method should be called", function () {
+			spyOn(note_application,"edit");
+			note_application.edit();
+			expect(note_application.edit).toHaveBeenCalled();
+		});
+
+		it("note[3] should be 'This is my EDITED note'", function () {
+			note_application.edit(3, "This is my EDITED note");
+		    expect(note_application.notes[3]).toEqual('This is my EDITED note');
+		});
+
+
+
+
 
 
 
