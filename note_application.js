@@ -16,6 +16,7 @@ function NotesApplication(author){
 			result = "Note ID: "+ i + "\n" + this.notes[i] + "\n\n By Author " + this.author;
 			console.log(result);
 		};
+		return result;
 	};
 
 	//This function takes a note_id which refers to the index of the note in the notes list and returns the content of that note as a string
