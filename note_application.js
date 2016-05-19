@@ -13,7 +13,7 @@ function NotesApplication(author){
 	//This function lists out each of the notes in the notes list 
 	this.listNotes = function(){
 		for (var i=0; i<this.notes.length; i++){
-			result = "Note ID: "+ i + "\n" + this.notes[i] + "\n\n By Author " + this.author;
+			result = 'Note ID: '+ i + '\n' + this.notes[i] + '\n\n By Author ' + this.author;
 			console.log(result);
 		};
 		return result;
@@ -25,9 +25,9 @@ function NotesApplication(author){
 		result = this.notes[note_id];
 		}
 		else 
-			if (note_id < 0) { result = "Invalid input";}
+			if (note_id < 0) { result = 'Invalid input';}
 
-		else {result = "Specified note does not exist";}
+		else {result = 'Specified note does not exist';}
 		return result;
 	}
 
